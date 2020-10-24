@@ -3,3 +3,6 @@
 test.py
 __pycache__/
 dataset/
+*.pkl
+.idea/
+data/
