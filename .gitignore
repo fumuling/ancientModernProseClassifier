@@ -4,6 +4,8 @@ test.py
 __pycache__/
 dataset/
 *.pkl
-.idea/
+.idea
 data
 .ipynb_checkpoints/
+characters-master/
+预处理/
