@@ -11,7 +11,7 @@ window.title("文本分类器")
 window.geometry("600x400")
 l1 = tkinter.Label(window, text = "请输入要分类的文本:")
 l1.pack()
-e = tkinter.Entry(window, show = None)
+e = tkinter.Text(window)
 e.pack()
 
 with open('characters-master/stop_words.txt', encoding='utf-8') as f:
@@ -22,7 +22,7 @@ train_tfidf_vector = joblib.load("TF-IDF_model.pkl")
 
 
 def MultinomialNB():
-    var = e.get()
+    var = e.get("0.0", "end")
     word_list = jieba.lcut(var)
     documents = []
     words = [wl for wl in word_list if wl not in stop_words]
@@ -36,7 +36,7 @@ def MultinomialNB():
 
 
 def BernoulliNB():
-    var = e.get()
+    var = e.get("0.0", "end")
     word_list = jieba.lcut(var)
     documents = []
     words = [wl for wl in word_list if wl not in stop_words]
